@@ -6,9 +6,12 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-
+import "./css/satoshi.css";
 import type { Route } from "./+types/root";
 import stylesheet from "./app.css?url";
+import Headers from "./components/Headers";
+import Footer from "./components/Footer";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -30,20 +33,37 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>RamServ Consultancy</title>
         <Meta />
         <Links />
       </head>
       <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
+        <div className="dark:bg-boxdark-2 dark:text-bodydark">
+          <div className="flex flex-col min-h-screen">
+            <Headers />
+
+            <main className="flex-1 overflow-y-auto">
+              <div className="mx-auto max-w-screen-2xl 2xl:p-10">
+                {children}
+                <ScrollRestoration />
+                <Scripts />
+              </div>
+            </main>
+
+            <Footer />
+          </div>
+        </div>
       </body>
     </html>
   );
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <ParallaxProvider>
+      <Outlet />
+    </ParallaxProvider>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
