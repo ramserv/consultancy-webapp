@@ -69,7 +69,7 @@ export default function Home() {
         <div className="flex w-full"></div>
       </div>
 
-      <div className="flex flex-wrap container p-8 mx-auto xl:px-0">
+      <div className="flex flex-wrap container px-8 mx-auto xl:px-0">
         <div className="flex flex-col justify-center w-full">
           <div className="text-xl text-center">
             Trusted by <span className="text-indigo-600">2000+</span> customers

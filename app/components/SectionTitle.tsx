@@ -10,7 +10,7 @@ interface SectionTitleProps {
 export const SectionTitle = (props: Readonly<SectionTitleProps>) => {
   return (
     <div
-      className={`flex w-full flex-col mt-6 ${
+      className={`flex w-full flex-col mt-6 px-8 ${
         props.align === "left" ? "" : "items-center justify-center text-center"
       }`}
     >

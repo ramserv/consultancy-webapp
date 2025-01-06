@@ -16,7 +16,7 @@ interface BenefitsProps {
 export const Benefits = (props: Readonly<BenefitsProps>) => {
   const { data } = props;
   return (
-    <div className="flex flex-wrap mb-20 mt-6 lg:gap-10 lg:flex-nowrap ">
+    <div className="flex flex-wrap mb-20 mt-6 px-8 lg:gap-10 lg:flex-nowrap ">
       <div
         className={`flex items-center justify-center w-full lg:w-1/2 ${
           props.imgPos === "right" ? "lg:order-1" : ""
@@ -74,7 +74,7 @@ function Benefit(props: any) {
           className: "w-7 h-7 text-indigo-50",
         })}
       </div> */}
-      <div className="pr-[15.5rem]">
+      <div className="md:pr-[15.5rem]">
         <h4 className="text-xl font-medium">{props.title}</h4>
         <p className="mt-1">{props.children}</p>
       </div>
