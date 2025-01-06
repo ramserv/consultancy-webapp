@@ -5,12 +5,11 @@ interface BenefitsProps {
   data: {
     imgPos?: "left" | "right";
     title: string;
-    desc: string;
+    // desc: string;
     image: any;
     bullets: {
       title: string;
       desc: string;
-      // icon: React.ReactNode;
     }[];
   };
 }
@@ -45,9 +44,9 @@ export const Benefits = (props: Readonly<BenefitsProps>) => {
               {data.title}
             </h3>
 
-            <p className="max-w-2xl py-4 text-lg leading-normal lg:text-xl xl:text-xl">
+            {/* <p className="max-w-2xl py-4 text-lg leading-normal lg:text-xl xl:text-xl">
               {data.desc}
-            </p>
+            </p> */}
           </div>
 
           <div className="w-full mt-5">
@@ -75,7 +74,7 @@ function Benefit(props: any) {
           className: "w-7 h-7 text-indigo-50",
         })}
       </div> */}
-      <div>
+      <div className="pr-[15.5rem]">
         <h4 className="text-xl font-medium">{props.title}</h4>
         <p className="mt-1">{props.children}</p>
       </div>

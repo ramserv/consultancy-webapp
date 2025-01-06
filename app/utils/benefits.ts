@@ -1,26 +1,23 @@
 import benefitOneImg from "../images/cover/benefit-01.webp";
 
 const benefitOne = {
-    title: "Highlight your benefits",
-    desc: "You can use this space to highlight your first benefit or a feature of your product. It can also contain an image or Illustration like in the example along with some bullet points.",
+    title: "RamServ benefits",
+    // desc: "Unlock the Full Potential of Your Business with Tailored Digital Solutions",
     image: benefitOneImg,
     bullets: [
       {
-        title: "Understand your customers",
-        desc: "Then explain the first point breifly in one or two lines.",
-        // icon: <FaceSmileIcon />,
+        title: "Custom Solutions",
+        desc: "We create tailored strategies that align with your unique business goals, ensuring impactful results.",
       },
       {
-        title: "Improve acquisition",
-        desc: "Here you can add the next benefit point.",
+        title: "Seamless Integration",
+        desc: "Our expertise in integrating advanced technology into existing products ensures smooth transitions and enhanced functionality.",
         icon: ""
-        // icon: <ChartBarSquareIcon />,
       },
       {
-        title: "Drive customer retention",
-        desc: "This will be your last bullet point in this section.",
+        title: "Scalable Growth",
+        desc: "We design solutions with scalability in mind, empowering your business to grow and evolve with the ever-changing digital landscape.",
         icon: ""
-        // icon: <CursorArrowRaysIcon />,
       },
     ],
   };
