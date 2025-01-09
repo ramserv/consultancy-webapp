@@ -1,10 +1,6 @@
-import Breadcrumb from "~/components/Breadcrumbs/Breadcrumb";
 import photo1 from "../images/photos/img1.png";
 import photo2 from "../images/photos/img2.png";
 import photo3 from "../images/photos/img3.png";
-import backdrop1 from "../images/photos/backdrop-01.jpg";
-import { ParallaxBanner } from "react-scroll-parallax";
-import { scrollToFooter } from "~/utils/scrollUtils";
 
 export default function Home() {
   return (

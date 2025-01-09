@@ -12,7 +12,6 @@ import stylesheet from "./app.css?url";
 import Headers from "./components/Headers";
 import Footer from "./components/Footer";
 import { ParallaxProvider } from "react-scroll-parallax";
-import { AnimatedPage, MotionSection } from "./routes/test";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -44,7 +43,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <Headers />
 
             <main className="flex-1 overflow-y-auto">
-              <div className="mx-auto max-w-screen-2xl 2xl:p-10">
+              <div className="mx-auto max-w-screen-3xl 3xl:p-10">
                 {children}
                 <ScrollRestoration />
                 <Scripts />

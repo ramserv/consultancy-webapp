@@ -259,7 +259,7 @@ export default {
         marquee: {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(-100%)' },
-        },
+        }
       },
       animation: {
         'ping-once': 'ping 5s cubic-bezier(0, 0, 0.2, 1)',
@@ -268,7 +268,7 @@ export default {
         'spin-2': 'spin 2s linear infinite',
         'spin-3': 'spin 3s linear infinite',
         marquee: 'marquee 40s linear infinite',
-},
+      },
     },
   },
   plugins: [],

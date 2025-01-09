@@ -1,5 +1,4 @@
-import React from "react";
-import { MotionSection } from "~/routes/test";
+import { MotionSection } from "./FramerMotion";
 
 interface BenefitsProps {
   imgPos?: "left" | "right";

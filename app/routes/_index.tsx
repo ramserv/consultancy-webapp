@@ -4,7 +4,9 @@ import { SectionTitle } from "~/components/SectionTitle";
 import { Benefits } from "~/components/Benefits";
 import { benefitOne } from "~/utils/benefits";
 import bgVideo01 from "../images/cover/bg-video-02.mp4";
-import { MotionSection } from "./test";
+import { scrollToElement } from "~/utils/scrollUtils";
+import { MotionSection } from "~/components/FramerMotion";
+import { useState } from "react";
 
 // export function meta({}: Route.MetaArgs) {
 //   return [
@@ -14,15 +16,23 @@ import { MotionSection } from "./test";
 // }
 
 export default function Home() {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   return (
     <>
       <MotionSection>
         <div className="relative h-screen w-full overflow-hidden">
+          <div
+            className={`absolute inset-0 bg-gray-900 ${
+              isVideoLoaded ? "opacity-0" : "opacity-100"
+            } transition-opacity duration-500`}
+          ></div>
           <video
             autoPlay
             muted
             loop
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
+            onCanPlayThrough={() => setIsVideoLoaded(true)}
           >
             <source src={bgVideo01} type="video/mp4" />
             Your browser does not support the video tag.
@@ -31,14 +41,21 @@ export default function Home() {
           <div className="relative flex flex-col items-center justify-center h-full text-center text-white bg-black/50">
             <h1 className="text-5xl font-bold">Welcome to RamServ</h1>
             <p className="mt-4 text-lg">Your digital journey starts here.</p>
-            <button className="mt-6 px-6 py-3 bg-ramserv rounded-lg hover:bg-blue-600">
+            <Link
+              to="/contact-us"
+              rel="noopener"
+              className="mt-6 px-6 py-3 bg-ramserv rounded-lg hover:bg-blue-600"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
         </div>
       </MotionSection>
       <MotionSection>
-        <div className="flex flex-wrap container px-8 py-3 mx-auto xl:px-0 min-h-screen">
+        <div
+          className="flex flex-wrap container px-8 py-3 mx-auto xl:px-0 h-5/6 mt-[5rem]"
+          id="secondDiv"
+        >
           <div className="flex items-center w-full lg:w-1/2">
             <div className="max-w-2xl mb-8 mr-8">
               <div className="text-5xl relative z-10">
@@ -57,18 +74,18 @@ export default function Home() {
                 <Link
                   to="/contact-us"
                   rel="noopener"
-                  className="px-8 py-4 text-lg font-medium text-center text-white bg-ramserv rounded-md "
+                  className="px-8 py-4 text-lg font-medium text-center text-white bg-ramserv rounded-md hover:bg-blue-600"
                 >
                   Get in touch
                 </Link>
-                <a
+                {/* <a
                   href="https://github.com/web3templates/nextly-template/"
                   target="_blank"
                   rel="noopener"
                   className="flex items-center space-x-2 text-gray-500 dark:text-gray-400"
                 >
                   <span> Some action</span>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -82,7 +99,7 @@ export default function Home() {
         </div>
       </MotionSection>
       <MotionSection>
-        <div className="flex flex-wrap container px-8 mx-auto xl:px-0">
+        <div className="flex flex-wrap container px-8 mt-[6rem] mx-auto xl:px-0">
           <div className="flex flex-col justify-center w-full">
             <div className="text-xl text-center">
               Trusted by <span className="text-indigo-600">2000+</span>{" "}
