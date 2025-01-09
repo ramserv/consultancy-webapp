@@ -1,4 +1,5 @@
 import React from "react";
+import { MotionSection } from "~/routes/test";
 
 interface BenefitsProps {
   imgPos?: "left" | "right";
@@ -51,13 +52,15 @@ export const Benefits = (props: Readonly<BenefitsProps>) => {
 
           <div className="w-full mt-5">
             {data.bullets.map((item, index) => (
-              <Benefit
-                key={index}
-                title={item.title}
-                // icon={item.icon}
-              >
-                {item.desc}
-              </Benefit>
+              <MotionSection key={index}>
+                <Benefit
+                  key={index}
+                  title={item.title}
+                  // icon={item.icon}
+                >
+                  {item.desc}
+                </Benefit>
+              </MotionSection>
             ))}
           </div>
         </div>

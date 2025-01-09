@@ -1,64 +1,71 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router";
 import LogoIcon from "../images/logo/rsc_logo.png";
 import NavBarLink from "~/buttons/navbar-link";
 import NavBarButton from "~/buttons/navbar-button";
 import DarkModeSwitcher from "~/components/Headers/DarkModeSwitcher";
+import video01 from "../images/cover/bg-video-02.mp4";
 
 export default function Headers() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle the menu
 
   return (
-    <header className="sticky top-0 z-50 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
-      <div className="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11">
-        {/* Logo */}
-        <div className="flex items-center gap-2 sm:gap-4">
-          <Link className="block flex-shrink-0" to="/">
-            <div className="w-32">
-              <img
-                src={LogoIcon}
-                alt="Logo"
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </Link>
-        </div>
+    <div className="relative h-screen w-full overflow-hidden">
+      <video
+        autoPlay
+        muted
+        loop
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={video01} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-        {/* Hamburger Menu - Visible only on smaller screens */}
-        <button
-          className="block md:hidden text-gray-700 dark:text-gray-300 focus:outline-none"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
+      <div className="relative flex flex-col items-center justify-center h-full text-center text-white bg-black/50">
+        <h1 className="text-5xl font-bold">Welcome to My Website</h1>
+        <p className="mt-4 text-lg">Your journey starts here.</p>
+        <button className="mt-6 px-6 py-3 bg-blue-500 rounded-lg hover:bg-blue-600">
+          Get Started
         </button>
-
-        {/* Navigation Menu */}
-        <nav
-          className={`${
-            isMenuOpen ? "block" : "hidden"
-          } absolute top-full left-0 w-full bg-white dark:bg-boxdark shadow-lg md:static md:block md:w-auto`}
-        >
-          <ul className="flex flex-col md:flex-row items-center gap-4 p-4 md:p-0">
-            <NavBarLink redirectTo="/services" text="Services" />
-            <NavBarLink redirectTo="/about" text="About" />
-            <NavBarButton redirectTo="/contact-us" text="Contact Us" />
-            <DarkModeSwitcher />
-          </ul>
-        </nav>
       </div>
-    </header>
+    </div>
   );
 }
+
+export const AnimatedPage = ({ children }: { children: React.ReactNode }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setIsLoaded(true), 50);
+  }, []);
+
+  return (
+    <div
+      className={`transform transition-transform duration-700 ${
+        isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+      }`}
+    >
+      {children}
+    </div>
+  );
+};
+
+export const MotionSection = ({ children }: { children: React.ReactNode }) => {
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      variants={variants}
+    >
+      {children}
+    </motion.div>
+  );
+};

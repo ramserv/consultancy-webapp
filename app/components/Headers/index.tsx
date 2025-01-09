@@ -68,15 +68,6 @@ export default function Headers() {
             <DarkModeSwitcher />
           </ul>
         </nav>
-
-        {/* <div className="flex items-center gap-3 2xsm:gap-7">
-          <ul className="flex items-center gap-2 2xsm:gap-4">
-            <NavBarLink redirectTo="/services" text="Services" />
-            <NavBarLink redirectTo="/about" text="About" />
-            <NavBarButton redirectTo="/contact-us" text="Contact Us" />
-            <DarkModeSwitcher />
-          </ul>
-        </div> */}
       </div>
     </header>
   );

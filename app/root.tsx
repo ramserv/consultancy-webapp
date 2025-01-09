@@ -12,6 +12,7 @@ import stylesheet from "./app.css?url";
 import Headers from "./components/Headers";
 import Footer from "./components/Footer";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { AnimatedPage, MotionSection } from "./routes/test";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -60,9 +61,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    <ParallaxProvider>
-      <Outlet />
-    </ParallaxProvider>
+    // <ParallaxProvider>
+    <Outlet />
+    // </ParallaxProvider>
   );
 }
 
