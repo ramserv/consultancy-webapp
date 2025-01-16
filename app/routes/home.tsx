@@ -1,3 +1,4 @@
+import { ParallaxBanner } from "react-scroll-parallax";
 import photo1 from "../images/photos/img1.png";
 import photo2 from "../images/photos/img2.png";
 import photo3 from "../images/photos/img3.png";
@@ -40,10 +41,10 @@ export default function Home() {
           <div className="relative flex-[2.5] flex items-start justify-center">
             <div className="relative w-full h-full">
               <img src={photo1} alt="photo one" />
-              {/* <ParallaxBanner
+              <ParallaxBanner
                 layers={[{ image: photo1, speed: -15 }]}
                 className="aspect-[2/1]"
-              /> */}
+              />
             </div>
           </div>
 

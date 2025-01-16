@@ -41,7 +41,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="dark:bg-boxdark-2 dark:text-bodydark">
           <div className="flex flex-col min-h-screen">
             <Headers />
-
             <main className="flex-1 overflow-y-auto">
               <div className="mx-auto max-w-screen-3xl 3xl:p-10">
                 {children}
@@ -49,7 +48,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <Scripts />
               </div>
             </main>
-
             <Footer />
           </div>
         </div>
@@ -60,9 +58,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    // <ParallaxProvider>
-    <Outlet />
-    // </ParallaxProvider>
+    <ParallaxProvider>
+      <Outlet />
+    </ParallaxProvider>
   );
 }
 
