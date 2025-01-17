@@ -1,14 +1,19 @@
-import cover2 from "../images/cover/digital-journey-enabler.svg";
 import { Link } from "react-router";
 import { SectionTitle } from "~/components/SectionTitle";
 import { Benefits } from "~/components/Benefits";
 import { benefitOne } from "~/utils/benefits";
 import bgVideo01 from "../images/cover/bg-video-02-compressed.mp4";
 import bgVideo02 from "../images/cover/bg-video-01-compressed.mp4";
+import serviceImg01 from "../images/photos/services/ai-img.jpg";
+import serviceImg02 from "../images/photos/services/cyber-img.jpg";
+import serviceImg03 from "../images/photos/services/globe-img.jpg";
+import serviceImg04 from "../images/photos/services/team-img.jpg";
+import serviceImg05 from "../images/photos/services/touch-img.jpg";
 import { scrollToElement } from "~/utils/scrollUtils";
 import { MotionSection } from "~/components/FramerMotion";
 import { useEffect, useState } from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
+import { Tile } from "~/components/Tile";
 
 // export function meta({}: Route.MetaArgs) {
 //   return [
@@ -27,7 +32,6 @@ export default function Test() {
   useEffect(() => {
     const handleScroll = () => {
       const secondDiv = document.getElementById("secondDiv");
-      const firstDiv = document.getElementById("firstDiv");
       const secondDivRect = secondDiv
         ? secondDiv.getBoundingClientRect()
         : { top: 0, bottom: 0 };
@@ -41,15 +45,7 @@ export default function Test() {
       if (secondDivBottom <= 0) {
         setVideoStyle({ position: "absolute", opacity: 0 });
       } else {
-        secondDivRect.top > window.innerHeight
-          ? setVideoStyle({
-              position: "fixed",
-              opacity: 1,
-            })
-          : setVideoStyle({ position: "fixed", opacity: fadeOpacity });
-        console.log(
-          `secondDivTop: ${secondDivRect.top}, secondDivBottom: ${secondDivRect.bottom}, windowHeight: ${window.innerHeight}`
-        );
+        setVideoStyle({ position: "fixed", opacity: fadeOpacity });
       }
     };
 
@@ -102,6 +98,7 @@ export default function Test() {
           </Link>
         </div>
       </div>
+
       <MotionSection>
         <div
           className="flex flex-wrap container px-8 py-3 mx-auto xl:px-0 h-5/6 mt-[100vh] dark:bg-boxdark-2 dark:text-bodydark"
@@ -141,6 +138,7 @@ export default function Test() {
           <div className="flex w-full"></div>
         </div>
       </MotionSection>
+
       <MotionSection>
         <div className="relative h-screen w-full overflow-hidden">
           <ParallaxBanner
@@ -170,10 +168,10 @@ export default function Test() {
                 speed: -20,
               },
             ]}
-            className="aspect-[2/1]"
+            className="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[2/1] w-full min-h-[100vh]"
           >
             <div className="absolute inset-0 flex flex-col items-center justify-center h-full text-center text-white bg-black/50">
-              <h1 className="text-5xl font-bold">
+              <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-snug">
                 <span className="font-thin">
                   Committed to Your Success, Connecting Beyond Borders
                 </span>
@@ -181,6 +179,31 @@ export default function Test() {
             </div>
           </ParallaxBanner>
         </div>
+      </MotionSection>
+
+      <MotionSection>
+        <>
+          <div className="container mx-auto px-8 py-12 xl:px-0 h-5/6">
+            <div className="flex justify-center w-full">
+              <div className="mb-8 relative z-10">
+                <p className="py-5 text-xl leading-normal lg:text-xl xl:text-2xl">
+                  Empower Your Business with the Power of Advanced Technology at
+                  Ramserv.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap justify-evenly gap-6">
+              <Tile
+                tileImage={serviceImg01}
+                tileText="Artificial Intelligence"
+              />
+              <Tile tileImage={serviceImg02} tileText="Cyber Security" />
+              <Tile tileImage={serviceImg03} tileText="Digital Marketing" />
+              <Tile tileImage={serviceImg04} tileText="Web Development" />
+              <Tile tileImage={serviceImg05} tileText="Custom Solutions" />
+            </div>
+          </div>
+        </>
       </MotionSection>
 
       <MotionSection>

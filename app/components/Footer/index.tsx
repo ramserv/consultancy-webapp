@@ -51,8 +51,8 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  className="nav-link inline"
-                  href="https://www.google.com/maps/place/2109+WS+09+Oxford+Rd+%23127+ParkVilla+Hills,+"
+                  className="nav-link inline text-decoration-none"
+                  // href="https://www.google.com/maps/place/2109+WS+09+Oxford+Rd+%23127+ParkVilla+Hills,+"
                 >
                   {/* 2109 WS 09 Oxford Rd #127 ParkVilla Hills, MI 48334 */}
                   Brampton, Ontario, Canada
