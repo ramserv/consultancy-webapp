@@ -73,6 +73,7 @@ export default function Test() {
         <video
           autoPlay
           muted
+          playsInline
           loop
           preload="auto"
           crossOrigin="anonymous"
