@@ -45,7 +45,12 @@ export default function Test() {
       if (secondDivBottom <= 0) {
         setVideoStyle({ position: "absolute", opacity: 0 });
       } else {
-        setVideoStyle({ position: "fixed", opacity: fadeOpacity });
+        secondDivRect.top > window.innerHeight
+          ? setVideoStyle({
+              position: "fixed",
+              opacity: 1,
+            })
+          : setVideoStyle({ position: "fixed", opacity: fadeOpacity });
       }
     };
 
@@ -75,7 +80,6 @@ export default function Test() {
           muted
           playsInline
           loop
-          preload="auto"
           crossOrigin="anonymous"
           className="absolute inset-0 w-full h-full object-cover"
           onCanPlayThrough={() => setIsVideoLoaded(true)}
