@@ -122,6 +122,9 @@ export default function ContactUs(_: Route.ComponentProps) {
     };
 
     try {
+      console.log(loaderData.ENV.EMAILJS_SERVICE_ID);
+      console.log(loaderData.ENV.EMAILJS_TEMPLATE_ID);
+      console.log(loaderData.ENV.EMAILJS_PUBLIC_KEY);
       const response = await emailjs.send(
         loaderData.ENV.EMAILJS_SERVICE_ID,
         loaderData.ENV.EMAILJS_TEMPLATE_ID!,
