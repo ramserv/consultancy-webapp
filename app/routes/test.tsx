@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
-import emailjs from "@emailjs/nodejs";
+import emailjs from "@emailjs/browser";
 import {
   data,
   redirect,
