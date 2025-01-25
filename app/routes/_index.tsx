@@ -22,7 +22,7 @@ import { Tile } from "~/components/Tile";
 //   ];
 // }
 
-export default function Test() {
+export default function Home() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [videoStyle, setVideoStyle] = useState({
     position: "fixed",
@@ -159,8 +159,8 @@ export default function Test() {
                     <video
                       autoPlay
                       muted
+                      playsInline
                       loop
-                      preload="auto"
                       crossOrigin="anonymous"
                       className="absolute inset-0 w-full h-full object-cover"
                       onCanPlayThrough={() => setIsVideoLoaded(true)}

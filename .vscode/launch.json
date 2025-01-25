@@ -1,10 +1,17 @@
 {
-    "configurations": [
-        {
-            "type": "chrome",
-            "name": "http://localhost:3001/",
-            "request": "launch",
-            "url": "http://localhost:3001/"
-        }
-    ]
+  "configurations": [
+    {
+      "command": "npm run dev",
+      "name": "Run npm run dev",
+      "request": "launch",
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "chrome",
+      "name": "http://localhost:3001/",
+      "request": "launch",
+      "url": "http://localhost:3001/"
+    }
+  ]
 }
