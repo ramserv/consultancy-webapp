@@ -1,5 +1,4 @@
 import { Link } from "react-router";
-import LogoIcon from "../../images/logo/rsc_logo.png";
 import SmallLogoIcon from "../../images/logo/rs_logo_mono.png";
 import DarkModeSwitcher from "./DarkModeSwitcher";
 import NavBarLink from "~/buttons/navbar-link";
@@ -62,9 +61,21 @@ export default function Headers() {
           } absolute top-full left-0 w-full bg-white dark:bg-boxdark md:static md:block md:w-auto`}
         >
           <ul className="flex flex-col md:flex-row items-center gap-4 p-4 md:p-0">
-            <NavBarLink redirectTo="/services" text="Services" />
-            <NavBarLink redirectTo="/about" text="About" />
-            <NavBarButton redirectTo="/contact-us" text="Contact Us" />
+            <NavBarLink
+              redirectTo="/services"
+              text="Services"
+              onClick={() => setIsMenuOpen(false)}
+            />
+            <NavBarLink
+              redirectTo="/about"
+              text="About"
+              onClick={() => setIsMenuOpen(false)}
+            />
+            <NavBarButton
+              redirectTo="/contact-us"
+              text="Contact Us"
+              onClick={() => setIsMenuOpen(false)}
+            />
             <DarkModeSwitcher />
           </ul>
         </nav>

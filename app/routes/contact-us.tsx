@@ -344,12 +344,11 @@ export default function ContactUs(_: Route.ComponentProps) {
         </fetcher.Form>
       </div>
 
-      {/* Modal Notification */}
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 dark:bg-white dark:bg-opacity-70 z-50">
-          <div className="w-full max-w-2xl rounded-lg bg-white dark:bg-boxdark p-6 shadow-md">
-            <div className="flex w-full bg-opacity-[15%] px-7 py-8 dark:bg-opacity-30 md:p-9">
-              <div className="mr-5 flex h-9 w-full max-w-[36px] items-center justify-center rounded-lg bg-ramserv">
+          <div className="w-full max-w-md sm:max-w-2xl rounded-lg bg-white dark:bg-boxdark p-4 sm:p-6 shadow-md mx-4">
+            <div className="flex flex-col sm:flex-row bg-opacity-[15%] sm:px-7 sm:py-8 dark:bg-opacity-30">
+              <div className="mb-4 sm:mb-0 sm:mr-5 flex h-9 w-full max-w-[36px] items-center justify-center rounded-lg bg-ramserv mx-auto sm:mx-0">
                 <svg
                   width="16"
                   height="12"
@@ -364,8 +363,8 @@ export default function ContactUs(_: Route.ComponentProps) {
                   ></path>
                 </svg>
               </div>
-              <div className="w-full">
-                <h5 className="mb-3 text-lg font-semibold ">
+              <div className="w-full text-center sm:text-left">
+                <h5 className="mb-2 text-lg font-semibold">
                   Interest Shared Successfully
                 </h5>
                 <p className="text-base leading-relaxed">
@@ -374,10 +373,10 @@ export default function ContactUs(_: Route.ComponentProps) {
                 </p>
               </div>
             </div>
-            <div className="flex justify-end w-full">
+            <div className="flex justify-center sm:justify-end w-full">
               <button
                 onClick={handleClose}
-                className="flex mt-4  justify-center rounded bg-ramserv py-2 px-6 font-medium text-gray hover:bg-opacity-90 hover:bg-blue-6  00"
+                className="flex mt-4 justify-center rounded bg-ramserv py-2 px-6 font-medium text-gray hover:bg-opacity-90 hover:bg-blue-600"
               >
                 Close
               </button>
